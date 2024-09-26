@@ -9,5 +9,7 @@ you can include your person components directories.
 3. Files inside your person components should be reasonable and follow these rules.
 
    - Inder, Main, Component for the main component's file,
-   - style and _variables for file with variables written in css and or scss,
+   - style or variables for file with variables written in css and or scss,
    - store for typescript files that manages store like zustand dependency.
+
+4. Your directory *can* include README.md and _variables.scss
