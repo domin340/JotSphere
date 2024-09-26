@@ -1,0 +1,75 @@
+@use "../../../styles/variables";
+
+$height: 30px;
+$nav-bg-color: mix(white, variables.$background, 5%);
+$nav-bg-color-hover: mix(white, variables.$background, 10%);
+
+.nav {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 3.5%;
+  left: 50%;
+  background-color: $nav-bg-color;
+  padding: 10px 15px;
+  border-radius: 32px;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    li {
+      .showMore {
+        bottom: 150%;
+        ul {
+          display: grid;
+          grid-template-columns: repeat(5, auto);
+          column-gap: 0;
+          transition: all 600ms ease;
+          li {
+            width: min-content;
+            margin-right: 15px;
+            &:nth-child(5n),
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Nav-List-Element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    &::before {
+      width: 150%;
+      height: 150%;
+    }
+  }
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: $nav-bg-color-hover;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 500ms ease;
+  }
+  img {
+    width: $height;
+  }
+}

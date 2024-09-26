@@ -1,0 +1,12 @@
+@use "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+
+body {
+  background-color: variables.$background;
+  color: variables.$text;
+  font-size: 1.1em;
+}
+
+button, body {
+  font-family: "Inter", sans-serif;
+}

@@ -1,0 +1,10 @@
+@use "../../../styles/variables";
+
+.button-icon {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: variables.$iconSize;
+  height: variables.$iconSize;
+}
