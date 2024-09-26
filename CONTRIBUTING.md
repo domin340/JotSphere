@@ -6,8 +6,7 @@ Thank you for your interest in contributing to JotSphere! Here are a few guideli
 
 1. **Fork the Repository**: Click the "Fork" button on GitHub to create your copy of the repository.
 
-2. **Clone Your Fork**: Use the following command to clone your forked repository to your local machine:
+2. **Clone Your Fork**: Use the following command to clone your forked repository to your local machine
 
-3. ```bash
-  
-   git clone https://github.com/[your-username]/[your-repo].git
+   ```bash
+      git clone https://github.com/domin340/JotSphere.git
