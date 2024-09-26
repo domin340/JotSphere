@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# Electron + TSX SWC Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application built in NodeJS environment.\
 
-Currently, two official plugins are available:
+Application that's goal is to increase efficiency of every student or user that can not manage his time.\
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Application is very easy to use and supports features:
 
-## Expanding the ESLint configuration
+- various plugins / extensions from other people,
+- built in calendar via iCal format,
+- notes you can write in .md format or within built in functions,
+- **for developers**:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  - easy utils,
+  - built in components to use,
+  - zustand stores!
 
-- Configure the top-level `parserOptions` property like this:
+If you decide to contribute please respect the rules provided within README.md or .txt
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Thanks
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Thank you! for visiting this repository, I hope you enjoy the application just as much as i did building in!
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## About src/lib
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+components in src/lib/@me are free of use under the condition of including this README.md in your project within the name of
+README.JotSphere.md or README.JtS.md
