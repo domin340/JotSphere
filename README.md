@@ -1,6 +1,6 @@
 # Electron + TSX SWC Application
 
-** APPLICATION IN DEVELOPMENT **
+**APPLICATION IN DEVELOPMENT**
 
 Application built in NodeJS environment.\
 
