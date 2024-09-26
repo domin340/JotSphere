@@ -1,8 +1,10 @@
 # Electron + TSX SWC Application
 
-Application built in NodeJS environment.\
+## APPLICATION IN DEVELOPMENT
 
-Application that's goal is to increase efficiency of every student or user that can not manage his time.\
+Application built in NodeJS environment.
+
+Application that's goal is to increase efficiency of every student or user that can not manage his time.
 
 Application is very easy to use and supports features:
 
