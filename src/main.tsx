@@ -7,8 +7,10 @@ import Navigation from "./lib/@me/Navigation/component";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Navigation />
-    <Index />
     <KeyListener />
+    <Navigation />
+    <div id="scene">
+      <Index />
+    </div>
   </StrictMode>
 );
