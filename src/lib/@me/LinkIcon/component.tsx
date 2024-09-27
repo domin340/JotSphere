@@ -24,4 +24,5 @@ function LinkIcon({ iconPath, alt, cb, className }: LinkIconProps) {
   );
 }
 
+
 export default LinkIcon;
