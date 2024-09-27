@@ -3,15 +3,22 @@
 $height: 30px;
 $nav-bg-color: mix(white, variables.$background, 5%);
 $nav-bg-color-hover: mix(white, variables.$background, 10%);
+$nav-over: 3.5%;
+
+.hide-nav-element {
+  bottom: -100% !important;
+}
 
 .nav {
+  transition: bottom 500ms ease;
   position: absolute;
-  transform: translateX(-50%);
   display: flex;
+  bottom: 0;
   justify-content: center;
   align-items: center;
-  bottom: 3.5%;
+  bottom: $nav-over;
   left: 50%;
+  transform: translate(-50%, 0);
   background-color: $nav-bg-color;
   padding: 10px 15px;
   border-radius: 32px;

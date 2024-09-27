@@ -5,12 +5,16 @@ import About from "../../../pages/About";
 
 export interface NavStore {
   elements: LinkIconProps[];
+  isShown: boolean;
+  setShown: (val: boolean) => void;
   max_icons_pn: number;
   add: (element: LinkIconProps) => void;
 }
 
 export const NavElementsStore = create<NavStore>((set) => ({
   elements: [],
+  isShown: false,
+  setShown: (value: boolean) => set({ isShown: value }),
   max_icons_pn: 6,
   add: (element: LinkIconProps) =>
     set((state) => ({
