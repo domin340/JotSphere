@@ -6,3 +6,5 @@
   
 - please after you ensure everything works correctly make sure u write yourself in
   starting from the root directory: ./src/api/devs.ts object
+
+- your directory should be the name of the plugin

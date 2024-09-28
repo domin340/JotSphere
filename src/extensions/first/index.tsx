@@ -1,5 +1,5 @@
-import { type Plugin } from "../../api/devs.types";
-import { Devs } from "../../api/devs";
+import { type Plugin } from "../../api/devs/devs.types";
+import { Devs } from "../../api/devs/devs";
 import Transform from "../../utils/pageMaster";
 import KeyTest from "../../pages/KeyTest";
 

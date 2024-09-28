@@ -10,4 +10,4 @@ export const Page = create<ReactPage>((set) => ({
   changeScene: (element: React.JSX.Element) => set({ current: element }),
 }));
 
-export default Page((state) => state.changeScene);
+export default Page.getState().changeScene;

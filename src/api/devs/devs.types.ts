@@ -1,4 +1,4 @@
-import { LinkIconProps } from "../lib/@me/LinkIcon/component";
+import { LinkIconProps } from "../../lib/@me/LinkIcon/component";
 
 export interface Dev {
   // proferable github
