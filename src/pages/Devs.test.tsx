@@ -4,7 +4,7 @@ import { ExtensionList, ListedDevsEntries } from "../api/devs/_db";
 function DevTest() {
   useEffect(() => {
     console.log(ExtensionList);
-  }, [])
+  }, []);
   return (
     <div className="Devs">
       <ul>

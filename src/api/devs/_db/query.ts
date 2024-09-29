@@ -1,5 +1,4 @@
-import { ExtensionList } from "./init";
-import { ListedDevsEntries } from ".";
+import { ListedDevsEntries, ExtensionList } from ".";
 import type { Plugin, Dev, tags } from "../devs.types";
 
 export function findByAuthor(username: string): Plugin[] {
