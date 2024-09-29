@@ -1,0 +1,25 @@
+@use "../../../styles/variables";
+
+.socials {
+  display: flex;
+  gap: 20px;
+  .socialLink {
+    padding: 5px 10px;
+    height: 30px;
+    color: variables.$text;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  #ko-fi {
+    background-color: #13c3ff;
+  }
+  #stack-overflow {
+    background-color: #f4811f;
+  }
+  #github {
+    background-color: #1b1f23;
+  }
+}

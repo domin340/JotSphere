@@ -1,10 +1,7 @@
-import { useEffect } from "react";
-import { ExtensionList, ListedDevsEntries } from "../api/devs/_db";
+import { ListedDevsEntries } from "../api/devs/_db";
+import { RenderSocials } from "../lib/@me/RenderSocials/component";
 
 function DevTest() {
-  useEffect(() => {
-    console.log(ExtensionList);
-  }, []);
   return (
     <div className="Devs">
       <ul>
@@ -12,13 +9,7 @@ function DevTest() {
           <li key={dev.username.toString()}>
             <p>{dev.username}</p>
             <p>{dev.description}</p>
-            {dev.socials ? (
-              <ul>
-                {Object.entries(dev.socials).map(([, value]) => (
-                  <li>{value.hostname}</li>
-                ))}
-              </ul>
-            ) : null}
+            {dev.socials ? RenderSocials(dev.socials) : null}
           </li>
         ))}
       </ul>

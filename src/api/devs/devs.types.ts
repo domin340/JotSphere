@@ -1,30 +1,37 @@
 import { LinkIconProps } from "../../lib/@me/LinkIcon/component";
 
 export class GithubUser extends URL {
+  override username: string;
   constructor(username: string) {
-    if (username.search("/")) throw new Error("invalid github account");
+    if (username.includes("/")) throw new Error("invalid github account");
     super(`https://github.com/${username}`);
+    this.username = username;
   }
 }
 
 export class StackOverFlowUser extends URL {
-  constructor(user_id: number) {
-    super(`https://stackoverflow.com/users/${user_id}`);
+  override username: string;
+  constructor(user: string) {
+    super(`https://stackoverflow.com/users/${user}`);
+    const splitted = user.split("/");
+    this.username = splitted[1];
   }
 }
 
 export class KoFiUser extends URL {
+  override username: string;
   constructor(username: string) {
-    if (username.search("/")) throw new Error("invalid github account");
+    if (username.includes("/")) throw new Error("invalid github account");
     super(`https://ko-fi.com/${username}`);
+    this.username = username;
   }
 }
 
 export class FixedString<N extends number> extends String {
   constructor(text: string, private readonly cap: N) {
-    super(text);
-    if (text.length > (this.cap as number))
+    if (text.length > (cap as number))
       throw new Error("text provided is too large");
+    super(text);
   }
   getCap(): number {
     return this.cap;

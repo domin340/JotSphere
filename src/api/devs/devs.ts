@@ -1,4 +1,4 @@
-import { Dev, FixedString } from "./devs.types";
+import { Dev, FixedString, GithubUser } from "./devs.types";
 
 /* 
   While creating an extension you MUST include yourself here as a developer.
@@ -22,7 +22,7 @@ export const Devs = Object.freeze({
     username: new FixedString("domin340", 40),
     description: new FixedString("The owner of the project", 180),
     socials: {
-      github: new URL("https://github.com/domin340"),
+      github: new GithubUser("domin340"),
     },
   },
 }) satisfies Record<string, Dev>;
