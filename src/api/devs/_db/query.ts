@@ -25,6 +25,7 @@ export function findPluginByName(name: string): Plugin | undefined {
 /*
   @NOTE:
     * this function might be reworked in the future to be more sql fulltext like.
+    * this function returns the index of the most correct input if found
 */
 export function FullText(text: string, inputs: string[]): number | undefined {
   const splitted: string[] = text.split(" ");
