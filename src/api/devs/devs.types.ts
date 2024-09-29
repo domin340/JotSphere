@@ -53,7 +53,7 @@ export interface Plugin {
   description: string;
   // max 3
   tags: tags;
-  // please access these by ./src/api/_db/devs.ts Devs object if you are not assigned add yourself
+  // please access these by ./src/api/devs/devs.ts Devs object if you are not assigned add yourself
   authors: Dev[];
   newElements?: {
     Navigation?: LinkIconProps[];
