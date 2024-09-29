@@ -21,9 +21,10 @@ export class KoFiUser extends URL {
 }
 
 export class FixedString<N extends number> extends String {
-  constructor(text: string, private readonly cap: N = cap as N) {
-    if (text.length > cap) throw new Error("text provided is too large");
+  constructor(text: string, private readonly cap: N) {
     super(text);
+    if (text.length > (this.cap as number))
+      throw new Error("text provided is too large");
   }
   getCap(): number {
     return this.cap;

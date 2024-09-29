@@ -5,9 +5,9 @@ import KeyTest from "../../pages/KeyTest";
 
 // define config function
 export default {
-  name: new FixedString<60>("new-nav-element"),
+  name: new FixedString("new-nav-element", 60),
   tags: ["FUN"],
-  description: new FixedString<200>("test"),
+  description: new FixedString("test", 200),
   authors: [Devs.domin],
   newElements: {
     Navigation: [

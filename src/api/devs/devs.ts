@@ -13,14 +13,14 @@ import { Dev, FixedString } from "./devs.types";
     nickname: Developer
 
   CLAIMS:
-    FixedString<40> and FixedString<180> have a run time check in constructor.
+    FixedString(text, 40) and FixedString(text, 180) have a run time check in constructor.
     if the input is too big it will return the error
 */
 
 export const Devs = Object.freeze({
   domin: {
-    username: new FixedString<40>("domin340"),
-    description: new FixedString<180>("The owner of the project"),
+    username: new FixedString("domin340", 40),
+    description: new FixedString("The owner of the project", 180),
     socials: {
       github: new URL("https://github.com/domin340"),
     },
