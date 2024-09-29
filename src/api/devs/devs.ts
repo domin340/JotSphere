@@ -15,6 +15,7 @@ import { Dev } from "./devs.types";
 
 export const Devs = Object.freeze({
   domin: {
+    id: 0n,
     username: "domin340",
     description: "the owner of the project",
     socials: [new URL("https://github.com/domin340")],
