@@ -1,5 +1,35 @@
 import { LinkIconProps } from "../../lib/@me/LinkIcon/component";
 
+export class GithubUser extends URL {
+  constructor(username: string) {
+    if (username.search("/")) throw new Error("invalid github account");
+    super(`https://github.com/${username}`);
+  }
+}
+
+export class StackOverFlowUser extends URL {
+  constructor(user_id: number) {
+    super(`https://stackoverflow.com/users/${user_id}`);
+  }
+}
+
+export class KoFiUser extends URL {
+  constructor(username: string) {
+    if (username.search("/")) throw new Error("invalid github account");
+    super(`https://ko-fi.com/${username}`);
+  }
+}
+
+export class FixedString<N extends number> extends String {
+  constructor(text: string, private readonly cap: N = cap as N) {
+    if (text.length > cap) throw new Error("text provided is too large");
+    super(text);
+  }
+  getCap(): number {
+    return this.cap;
+  }
+}
+
 // tags that can be applied to Plugins.tags interface
 export type TagsEnum = [
   "FUN",
@@ -24,33 +54,30 @@ export type TagsEnum = [
 // type that has to have at least 1 element but can not have more than 3
 export type tags = Readonly<[TagsEnum, TagsEnum?, TagsEnum?]>;
 
+export type socialsType = Readonly<
+  Partial<{
+    github: GithubUser;
+    stackOverflow: StackOverFlowUser;
+    koFi: KoFiUser;
+  }>
+>;
+
 export interface Dev {
   /*
-    Your ID thats located in settings
+    Unique developer nickname name sure it has not been used yet
   */
-  id: bigint;
+  username: FixedString<40>;
   /*
-    Your nickname, preferable github username
+    small description of yourself
   */
-  username: string;
-  /*
-    Your developer description
-    PUTING INAPROPRIATE SOCIALS IS PROHIBITED AND WILL RESULT IN IMMEDIATE DEVELOPER BAN!
-    example:
-      - onlyfans
-      - porn
-      - gambling sites
-      - etc..
-    also applies to socials
-  */
-  description?: string;
-  socials?: URL[];
+  description?: FixedString<180>;
+  socials?: socialsType;
 }
 
 // !import EVERY PLUGIN MUST RETURN THIS OBJECT INTERFACE
 export interface Plugin {
-  name: string;
-  description: string;
+  name: FixedString<60>;
+  description: FixedString<200>;
   // max 3
   tags: tags;
   // please access these by ./src/api/devs/devs.ts Devs object if you are not assigned add yourself

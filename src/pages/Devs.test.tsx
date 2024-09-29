@@ -9,15 +9,13 @@ function DevTest() {
     <div className="Devs">
       <ul>
         {ListedDevsEntries.map((dev) => (
-          <li key={dev.id}>
-            <p>
-              {dev.username}, {dev.username}
-            </p>
+          <li key={dev.username.toString()}>
+            <p>{dev.username}</p>
             <p>{dev.description}</p>
             {dev.socials ? (
               <ul>
-                {dev.socials.map((social) => (
-                  <li key={social.hostname}>{social.hostname}</li>
+                {Object.entries(dev.socials).map(([, value]) => (
+                  <li>{value.hostname}</li>
                 ))}
               </ul>
             ) : null}

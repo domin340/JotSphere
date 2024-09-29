@@ -1,4 +1,4 @@
-import { Dev } from "./devs.types";
+import { Dev, FixedString } from "./devs.types";
 
 /* 
   While creating an extension you MUST include yourself here as a developer.
@@ -11,13 +11,18 @@ import { Dev } from "./devs.types";
 
   example:
     nickname: Developer
+
+  CLAIMS:
+    FixedString<40> and FixedString<180> have a run time check in constructor.
+    if the input is too big it will return the error
 */
 
 export const Devs = Object.freeze({
   domin: {
-    id: 0n,
-    username: "domin340",
-    description: "the owner of the project",
-    socials: [new URL("https://github.com/domin340")],
+    username: new FixedString<40>("domin340"),
+    description: new FixedString<180>("The owner of the project"),
+    socials: {
+      github: new URL("https://github.com/domin340"),
+    },
   },
 }) satisfies Record<string, Dev>;
