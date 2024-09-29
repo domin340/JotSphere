@@ -1,7 +1,8 @@
 import { LinkIconProps } from "../../lib/@me/LinkIcon/component";
 
-export type TagsEnum = ([
-  "FUN", // memes, or other
+// tags that can be applied to Plugins.tags interface
+export type TagsEnum = [
+  "FUN",
   "NEW_ELEMENTS",
   "KEY_INPUTS",
   "SHORTCUTS",
@@ -9,7 +10,7 @@ export type TagsEnum = ([
   "CALENDAR",
   "NOTEBOOK",
   "EXPLORER",
-  "WIDGETS",    // for additional modular UI components
+  "WIDGETS", // for additional modular UI components
   "TASK_MANAGEMENT", // managing tasks in apps
   "SEARCH", // search functionality
   "USER_PROFILES", // user-related features
@@ -17,7 +18,8 @@ export type TagsEnum = ([
   "THEMES", // visual themes customization
   "DASHBOARD", // central hub for accessing tools/pages
   "NAVIGATION", // navigational improvements or shortcuts
-])[number]
+  "MUSIC"
+][number];
 
 // type that has to have at least 1 element but can not have more than 3
 export type tags = Readonly<[TagsEnum, TagsEnum?, TagsEnum?]>;
@@ -45,11 +47,13 @@ export interface Dev {
   socials?: URL[];
 }
 
-// !import THE INTERFACE THAT EVERY EXTENSION MUST RETURN IN AN OBJECT
+// !import EVERY PLUGIN MUST RETURN THIS OBJECT INTERFACE
 export interface Plugin {
   name: string;
   description: string;
+  // max 3
   tags: tags;
+  // please access these by ./src/api/_db/devs.ts Devs object if you are not assigned add yourself
   authors: Dev[];
   newElements?: {
     Navigation?: LinkIconProps[];
