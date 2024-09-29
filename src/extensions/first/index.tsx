@@ -1,13 +1,13 @@
-import { type Plugin } from "../../api/devs/devs.types";
+import { type Plugin, FixedString } from "../../api/devs/devs.types";
 import { Devs } from "../../api/devs/devs";
 import Transform from "../../utils/pageMaster";
 import KeyTest from "../../pages/KeyTest";
 
 // define config function
 export default {
-  name: "new-nav-element",
+  name: new FixedString("new-nav-element", 60),
   tags: ["FUN"],
-  description: "test",
+  description: new FixedString("test", 200),
   authors: [Devs.domin],
   newElements: {
     Navigation: [
