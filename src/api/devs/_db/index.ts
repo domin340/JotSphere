@@ -1,4 +1,4 @@
-import { ResolveExtensions, ExtensionList as $Extensions} from "./init";
+import { ResolveExtensions, ExtensionList as $Extensions } from "./init";
 import { Devs as $Devs } from "../devs";
 import * as $QUERIES from "./query";
 import type { Dev } from "../devs.types";
