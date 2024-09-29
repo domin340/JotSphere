@@ -6,6 +6,7 @@ import KeyTest from "../../pages/KeyTest";
 // define config function
 export default {
   name: "new-nav-element",
+  tags: ["FUN"],
   description: "test",
   authors: [Devs.domin],
   newElements: {

@@ -21,7 +21,7 @@ If you decide to contribute please respect the rules provided within README.md o
 
 ## Thanks
 
-Thank you! for visiting this repository, I hope you enjoy the application just as much as i did building in!
+Thank you! for visiting this repository, I hope you enjoy the application just as much as i did building it!
 
 ## About src/lib
 
