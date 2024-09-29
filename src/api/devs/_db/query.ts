@@ -21,3 +21,26 @@ export function findAuthor(username: string): Dev | undefined {
 export function findPluginByName(name: string): Plugin | undefined {
   return ExtensionList.find((extension) => extension.name == name);
 }
+
+/*
+  @NOTE:
+    * this function might be reworked in the future to be more sql fulltext like.
+*/
+export function FullText(text: string, inputs: string[]): number | undefined {
+  const splitted: string[] = text.split(" ");
+  const requiredWords: string[] = [];
+  const excludedWords: string[] = [];
+  splitted.forEach((word) => {
+    if (word.startsWith("+")) requiredWords.push(word.slice(1));
+    else if (word.startsWith("-")) excludedWords.push(word.slice(1));
+  });
+  for (let i = 0; i < inputs.length; i++) {
+    const containsRequired: boolean = requiredWords.some((word) =>
+      inputs[i].includes(word)
+    );
+    const containsExcluded: boolean = excludedWords.some((word) =>
+      inputs[i].includes(word)
+    );
+    if (containsRequired && !containsExcluded) return i;
+  }
+}
