@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { EnumeratedDevs, ExtensionList } from "../api/devs/_db/init";
+import { ExtensionList, ListedDevsEntries } from "../api/devs/_db";
 
 function DevTest() {
   useEffect(() => {
@@ -8,10 +8,10 @@ function DevTest() {
   return (
     <div className="Devs">
       <ul>
-        {EnumeratedDevs.map((dev) => (
+        {ListedDevsEntries.map((dev) => (
           <li key={dev.id}>
             <p>
-              {dev.id}, {dev.username}
+              {dev.username}, {dev.username}
             </p>
             <p>{dev.description}</p>
             {dev.socials ? (
