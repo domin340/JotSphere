@@ -7,41 +7,46 @@ import type {
 
 import "./style.scss";
 
-export function RenderGithub(url: GithubUser): JSX.Element {
+export function RenderGithub({ username, href }: GithubUser) {
   return (
-    <a href={url.href} className="socialLink" id="github">
+    <a href={href} className="socialLink" id="github">
       <img src="/github.svg" width={32} height={32} />
-      <p>{url.username}</p>
+      <p>{username}</p>
     </a>
   );
 }
 
-export function RenderKoFi(url: KoFiUser): JSX.Element {
+export function RenderKoFi({ username, href }: KoFiUser) {
   return (
-    <a href={url.href} className="socialLink ko-fi" id="ko-fi">
+    <a href={href} className="socialLink ko-fi" id="ko-fi">
       <img src="/kofi.svg" width={32} height={32} />
-      <p>{url.username}</p>
+      <p>{username}</p>
     </a>
   );
 }
 
-export function RenderStackOverFlow(url: StackOverFlowUser): JSX.Element {
+export function RenderStackOverFlow({
+  username,
+  href,
+}: StackOverFlowUser): JSX.Element {
   return (
-    <a href={url.href} className="socialLink" id="stack-overflow">
+    <a href={href} className="socialLink" id="stack-overflow">
       <img src="/stack-overflow.svg" width={32} height={32} />
-      <p>{url.username}</p>
+      <p>{username}</p>
     </a>
   );
 }
 
-export function RenderSocials(socials: socialsType): JSX.Element {
+export function RenderSocials({
+  github,
+  koFi,
+  stackOverflow,
+}: socialsType): JSX.Element {
   return (
     <div className="socials">
-      {socials.github ? RenderGithub(socials.github) : null}
-      {socials.koFi ? RenderKoFi(socials.koFi) : null}
-      {socials.stackOverflow
-        ? RenderStackOverFlow(socials.stackOverflow)
-        : null}
+      {github ? <RenderGithub {...github} /> : null}
+      {koFi ? <RenderKoFi {...koFi} /> : null}
+      {stackOverflow ? <RenderStackOverFlow {...stackOverflow} /> : null}
     </div>
   );
 }
