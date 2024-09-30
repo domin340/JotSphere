@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { LinkIconProps } from "../LinkIcon/component";
 import { Page } from "../../../utils/pageMaster";
 import About from "../../../pages/About";
-import DevTest from "../../../pages/Devs.test";
+import Plugins from "../../../pages/Plugins";
 
 export interface NavStore {
   elements: LinkIconProps[];
@@ -34,7 +34,7 @@ export const NavElementsStore = create<NavStore>((set) => ({
     {
       iconPath: "/search.svg",
       cb: () => {
-        Page.getState().changeScene(<DevTest />);
+        Page.getState().changeScene(<Plugins />);
       },
     },
     {

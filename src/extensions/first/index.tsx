@@ -17,4 +17,5 @@ export default {
       },
     ],
   },
+  sourceCode: new URL("https://github.com/domin340/JotSphere")
 } satisfies Plugin;

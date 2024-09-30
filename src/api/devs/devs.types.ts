@@ -75,10 +75,6 @@ export interface Dev {
     Unique developer nickname name sure it has not been used yet
   */
   username: FixedString<40>;
-  /*
-    small description of yourself
-  */
-  description?: FixedString<180>;
   socials?: socialsType;
 }
 
@@ -90,6 +86,7 @@ export interface Plugin {
   tags: tags;
   // please access these by ./src/api/devs/devs.ts Devs object if you are not assigned add yourself
   authors: Dev[];
+  sourceCode?: URL;
   newElements?: {
     Navigation?: LinkIconProps[];
   };

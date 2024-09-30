@@ -1,0 +1,9 @@
+@use "../../../styles/variables";
+
+.tagElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$nav-bg-color;
+  height: 30px;
+}

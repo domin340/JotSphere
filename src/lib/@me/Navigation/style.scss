@@ -1,8 +1,6 @@
 @use "../../../styles/variables";
 
 $height: 30px;
-$nav-bg-color: mix(white, variables.$background, 5%);
-$nav-bg-color-hover: mix(white, variables.$background, 10%);
 $nav-over: 3.5%;
 
 .hide-nav-element {
@@ -19,7 +17,7 @@ $nav-over: 3.5%;
   bottom: $nav-over;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: $nav-bg-color;
+  background-color: variables.$nav-bg-color;
   padding: 10px 15px;
   border-radius: 32px;
   ul {
@@ -67,7 +65,7 @@ $nav-over: 3.5%;
     content: "";
     width: 0;
     height: 0;
-    background-color: $nav-bg-color-hover;
+    background-color: variables.$nav-bg-color-hover;
     border-radius: 50%;
     position: absolute;
     top: 50%;
